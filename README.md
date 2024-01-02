@@ -41,6 +41,14 @@ Backend for the Wednesdays Wicked Adventure project, a MERN stack application. T
    node index.js
    ```
 
+7. **Access Swagger Documentation:**
+   - Swagger auto documentation is available at http://localhost:5000/api-docs.
+
+8. **Run Unit Tests:**
+   ```bash
+   npm test
+   ```
+
 ## Contributing
 
 Contributions are welcome! If you have ideas for enhancements or find issues, please open a pull request or report an issue.
