@@ -1,13 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "WWA backend",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Pardeep Narwal: github.com/Narwal25",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
