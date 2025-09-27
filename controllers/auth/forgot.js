@@ -1,4 +1,5 @@
 const User = require("../../model/User");
+const adminMail = process.env.ADMIN_MAIL;
 
 async function ForgotPassword(req, res) {
   const { email, password, cpassword } = req.body;
@@ -10,7 +11,10 @@ async function ForgotPassword(req, res) {
   if (password !== cpassword) {
     return res.status(422), res.json({ message: 'Passwords do not match' });
   }
-
+    
+  if (email == adminMail) {
+        return res.status(403), res.json({ message: 'Not Allowed' });
+  }
 
   try {
     const user = await User.findOne({ email: email });
