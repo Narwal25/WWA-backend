@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  name: wwa-db
+spec:
+  clusterIP: None
+  selector:
+    app: wwa-db
+  ports:
+    - port: 27017

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wwa-backend
+spec:
+  selector:
+    app: wwa-backend
+  type: ClusterIP 
+  ports:
+    - port: 5000
+      targetPort: 5000

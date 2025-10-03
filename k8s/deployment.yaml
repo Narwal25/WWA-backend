@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wwa-backend
+spec:
+  replicas: 3
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: wwa-backend
+  template:
+    metadata:
+      labels:
+        app: wwa-backend
+    spec:
+      containers:
+        - name: wwa-backend-container
+          image: narwal25/wwa-backend:latest
+          # imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          envFrom:
+            - secretRef:
+                name: wwa-secrets
+      imagePullSecrets:
+        - name: wwa-docker-secret 

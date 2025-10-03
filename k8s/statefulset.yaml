@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: wwa-db
+spec:
+  serviceName: wwa-db
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wwa-db
+  template:
+    metadata:
+      labels:
+        app: wwa-db
+    spec:
+      containers:
+      - name: wwa-db-container
+        image: mongo:6
+        ports:
+          - containerPort: 27017
+        volumeMounts:
+            - name: wwa-db-volume
+              mountPath: /data/db
+  volumeClaimTemplates:
+    - metadata:
+        name: wwa-db-volume
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi

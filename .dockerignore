@@ -1,0 +1,7 @@
+/config
+config.env
+
+Dockerfile
+/__tests__
+jest.config.js 
+.gitignore
