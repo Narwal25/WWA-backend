@@ -22,5 +22,12 @@ spec:
           envFrom:
             - secretRef:
                 name: wwa-secrets
+          resources:
+            requests:
+              memory: "50Mi"
+              cpu: "100m"
+            limits:
+              memory: "100Mi"
+              cpu: "150m"
       imagePullSecrets:
         - name: wwa-docker-secret 
